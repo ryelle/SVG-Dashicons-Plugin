@@ -1,0 +1,10 @@
+
+{
+  "name": "SVG-Dashicons",
+  "version": "0.0.1",
+  "main": "Gruntfile.js",
+  "author": "Dashicons Team",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
