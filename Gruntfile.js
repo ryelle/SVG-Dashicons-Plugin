@@ -46,7 +46,22 @@ module.exports = function( grunt ) {
 			}
 		},
 
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded'
+				},
+				files: {
+					'css/svg.css': 'css/svg.scss'
+				}
+			}
+		},
+
 		watch: {
+			css: {
+				files: ['css/**'],
+				tasks: ['sass']
+			},
 			svg: {
 				files: ['icons/src/**'],
 				tasks: ['svgmin', 'svgstore']

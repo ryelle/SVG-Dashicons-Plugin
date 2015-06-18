@@ -1,0 +1,29 @@
+$menu-icon: #a0a5aa;
+$menu-highlight-icon: #00b9eb;
+$menu-current-icon: #fff;
+
+svg {
+	width: 20px;
+	height: 100%;
+}
+
+#adminmenu use {
+	fill: $menu-icon;
+}
+
+#adminmenu li.menu-top:hover use,
+#adminmenu li.opensub > a.menu-top use {
+	fill:$menu-highlight-icon;
+}
+
+/* Admin Menu: current */
+
+#adminmenu li.wp-has-current-submenu:hover use,
+#adminmenu .wp-has-current-submenu use,
+#adminmenu .current use,
+#adminmenu a.wp-has-current-submenu:hover use,
+#adminmenu a.current:hover use,
+#adminmenu li.wp-has-current-submenu a:focus use,
+#adminmenu li.wp-has-current-submenu.opensub use {
+	fill: $menu-current-icon;
+}

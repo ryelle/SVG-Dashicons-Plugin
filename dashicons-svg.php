@@ -28,12 +28,21 @@ HTML;
 	 * Constructor
 	 */
 	public function __construct() {
+		// Add SVG styles
+		add_action( 'admin_enqueue_scripts', array( $this, 'add_styles' ) );
 		// Bypass displaying the admin menu
 		add_action( 'admin_head', array( $this, 'start_buffer' ), 99 );
 		add_action( 'adminmenu', array( $this, 'stop_buffer' ), 1 );
 
 		// And use our function to show it instead.
 		add_action( 'adminmenu', array( $this, 'menu' ), 10 );
+	}
+
+	/**
+	 * Add CSS to control SVG display (size & color)
+	 */
+	function add_styles(){
+		wp_enqueue_style( 'dashicons-svg', plugins_url( '/css/svg.css', __FILE__ ) );
 	}
 
 	/**
@@ -131,8 +140,7 @@ HTML;
 					$img_style = ' style="background-image:url(\'' . esc_attr( $item[6] ) . '\')"';
 					$img_class = ' svg';
 				} elseif ( 0 === strpos( $item[6], 'dashicons-' ) ) {
-					$img = '<br />';
-					$img_class = ' dashicons-before ' . sanitize_html_class( $item[6] );
+					$img = '<svg><use xlink:href="'. plugins_url( '/icons/dashicons.svg#' . $item[6], __FILE__ ) . '"></use></svg>';
 				}
 			}
 			$arrow = '<div class="wp-menu-arrow"><div></div></div>';
