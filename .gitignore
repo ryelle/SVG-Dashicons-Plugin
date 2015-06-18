@@ -1,3 +1,6 @@
 node_modules
 icons/.tmp
 .sass-cache
+css/svg.css
+css/svg.css.map
+icons/dashicons.svg
