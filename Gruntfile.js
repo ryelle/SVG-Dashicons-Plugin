@@ -49,7 +49,7 @@ module.exports = function( grunt ) {
 		watch: {
 			svg: {
 				files: ['icons/src/**'],
-				tasks: ['svgmin', 'svgstore', 'grunticon']
+				tasks: ['svgmin', 'svgstore']
 			}
 		}
 	});
