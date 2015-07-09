@@ -129,7 +129,7 @@ HTML;
 					$img_style = ' style="background-image:url(\'' . esc_attr( $item[6] ) . '\')"';
 					$img_class = ' svg';
 				} elseif ( 0 === strpos( $item[6], 'dashicons-' ) ) {
-					$img = '<svg><use xlink:href="'. plugins_url( '/icons/dashicons.svg#' . $item[6], __FILE__ ) . '"></use></svg>';
+					$img = dashicons_svg_icon( $item[6] );
 				}
 			}
 			$arrow = '<div class="wp-menu-arrow"><div></div></div>';
